@@ -1,0 +1,17 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var OperationClient = require('./OperationClient.cjs');
+
+const operationModule = () => ({
+  install(metaplex) {
+    const operationClient = new OperationClient.OperationClient(metaplex);
+
+    metaplex.operations = () => operationClient;
+  }
+
+});
+
+exports.operationModule = operationModule;
+//# sourceMappingURL=plugin.cjs.map

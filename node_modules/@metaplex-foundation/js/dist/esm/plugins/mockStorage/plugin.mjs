@@ -1,0 +1,11 @@
+import { MockStorageDriver } from './MockStorageDriver.mjs';
+
+const mockStorage = options => ({
+  install(metaplex) {
+    metaplex.storage().setDriver(new MockStorageDriver(options));
+  }
+
+});
+
+export { mockStorage };
+//# sourceMappingURL=plugin.mjs.map

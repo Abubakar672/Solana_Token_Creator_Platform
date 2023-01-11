@@ -1,0 +1,17 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var DerivedIdentityClient = require('./DerivedIdentityClient.cjs');
+
+const derivedIdentity = () => ({
+  install(metaplex) {
+    const derivedIdentityClient = new DerivedIdentityClient.DerivedIdentityClient(metaplex);
+
+    metaplex.derivedIdentity = () => derivedIdentityClient;
+  }
+
+});
+
+exports.derivedIdentity = derivedIdentity;
+//# sourceMappingURL=plugin.cjs.map

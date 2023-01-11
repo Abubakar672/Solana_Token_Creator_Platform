@@ -1,0 +1,32 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var Cluster = require('./types/Cluster.cjs');
+var plugin = require('./plugins/corePlugins/plugin.cjs');
+
+class Metaplex {
+  /** The connection object from Solana's SDK. */
+
+  /** The cluster in which the connection endpoint belongs to. */
+  constructor(connection, options = {}) {
+    var _options$cluster;
+
+    this.connection = connection;
+    this.cluster = (_options$cluster = options.cluster) !== null && _options$cluster !== void 0 ? _options$cluster : Cluster.resolveClusterFromConnection(connection);
+    this.use(plugin.corePlugins());
+  }
+
+  static make(connection, options = {}) {
+    return new this(connection, options);
+  }
+
+  use(plugin) {
+    plugin.install(this);
+    return this;
+  }
+
+}
+
+exports.Metaplex = Metaplex;
+//# sourceMappingURL=Metaplex.cjs.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"Model.cjs","sources":["../../../src/types/Model.ts"],"sourcesContent":["export abstract class Model {\n  //\n}\n"],"names":["Model"],"mappings":";;;;AAAO,MAAeA,KAAf,CAAqB;AAAA;;;;"}
